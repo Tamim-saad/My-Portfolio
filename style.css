@@ -530,8 +530,8 @@ button:hover {
 
 .about-text-box1 {
     position: absolute;
-    top: 50%;
-    left: 40%;
+    top: 40%;
+    left: 45%;
     transform: translate(-50%, -50%);
     width: 350px;
     height: 300px;
@@ -541,8 +541,8 @@ button:hover {
 
 .about-text-box2 {
     position: absolute;
-    top: 55%;
-    left: 45%;
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
     width: 350px;
     height: 300px;
@@ -1537,6 +1537,13 @@ button:hover {
 
     /* Ensure no overlap by making text container taller */
     .about-text-box2 {
+        position: relative !important;
+        left: auto !important;
+        top: auto !important;
+        transform: none !important;
+        margin: 20px auto 60px auto;
+        display: block;
+        z-index: 10;
         max-height: none;
         overflow: visible;
         line-height: 1.6;
@@ -1557,10 +1564,15 @@ button:hover {
         padding: 0 5px;
     }
 
-    .about-text-box1,
-    .about-text-box2 {
+    .about-text-box1 {
         margin-left: auto;
         margin-right: auto;
+    }
+
+    .about-text-box2 {
+        width: 90% !important;
+        max-width: 300px !important;
+        margin: 15px auto 50px auto !important;
     }
 }
 

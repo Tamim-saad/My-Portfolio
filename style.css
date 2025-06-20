@@ -5,28 +5,110 @@
     font-family: 'Roboto', sans-serif;
 }
 
+/* Prevent horizontal scrolling */
+html,
+body {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
+}
+
+/* Ensure all containers fit within viewport */
+.home-page,
+.home-up,
+.home-down,
+.about-text-info-container,
+.school-college-container,
+.about-admission-and-university,
+.project-container,
+.contact-intro,
+.contact-links,
+.contact-form-outer {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
 
 
 .navbar {
     display: flex;
     flex-direction: row;
-    /* align-items: ; */
+    align-items: center;
     justify-content: space-between;
-    padding: 20px;
+    padding: 25px 30px;
     background: rgb(255, 0, 0, 0.2);
     font-weight: bold;
     font-size: large;
+    position: relative;
+    z-index: 1000;
+    min-height: 80px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 
 .logo-text {
     font-size: x-large;
+    font-weight: 800;
+    color: rgb(255, 0, 0, 0.8);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: color 0.3s ease;
+}
+
+.logo-text:hover {
+    color: rgb(255, 0, 0, 1);
 }
 
 .navlinks {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 25px;
+}
+
+.navlinks li {
+    list-style: none;
+}
+
+.navlinks a {
+    text-decoration: none;
+    color: rgb(255, 0, 0, 0.7);
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 10px 16px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    position: relative;
+    text-transform: capitalize;
+}
+
+.navlinks a:hover {
+    color: rgb(255, 0, 0, 1);
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 2px 8px rgba(255, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+.navlinks a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: rgb(255, 0, 0, 0.8);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.navlinks a:hover::before {
+    width: 80%;
+}
+
+.navlinks a:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 4px rgba(255, 0, 0, 0.3);
 }
 
 #form-section {
@@ -54,28 +136,34 @@ a {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: rgb(200, 200, 200, 0.3);
+    background: linear-gradient(135deg, #f8fafc 0%, #e3f0ff 100%);
+    /* soft blue-white gradient */
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 .home-up {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    /* flex-direction: row; */
     align-items: center;
     justify-content: center;
-    /* background: rgb(200, 200, 200, 0.5); */
-    background: linear-gradient(to left, #837f7e, #d0c7bf);
+    background: linear-gradient(to left, #be8f67, #87a3a5);
+    width: 100%;
+    max-width: 100%;
+    min-height: 100vh;
+    box-sizing: border-box;
 }
 
 .home-up-left {
     display: flex;
     flex-direction: column;
-    /* align-items:; */
     gap: 20px;
-    justify-content: right;
+    justify-content: center;
+    align-items: flex-start;
     padding: 15% 20%;
-    /* padding-right: 0px; */
-    /* background: rgb(0, 0, 0,0.2); */
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .nameh1 {
@@ -103,24 +191,29 @@ button:hover {
 
 .home-connect-icons {
     display: flex;
-    gap: 10px;
-    /* Optional: Adds space between images */
+    gap: 5px;
+    /* reduced gap globally */
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    margin-top: 0;
+    /* ensure no extra top margin */
+}
+
+.rounded-icon-link {
+    display: inline-block;
+    text-decoration: none;
 }
 
 .rounded-icon:hover {
     transform: scale(1.1);
-    /* Increases the size of the image on hover */
 }
 
 .rounded-icon {
     width: 30px;
-    /* Set a fixed width */
     height: 30px;
-    /* Set a fixed height */
     object-fit: cover;
-    /* Ensures the image covers the box without distortion */
     border-radius: 50%;
-    /* Makes the image rounded */
 }
 
 
@@ -130,19 +223,23 @@ button:hover {
     padding-left: 0%;
     /* box-shadow: inset; */
     /* box-shadow: 30px; */
+    object-fit: cover;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
 }
 
-/* .home-profile-image:hover{
-    transform: scale(1.03);
-} */
+.home-profile-image:hover {
+    transform: scale(1.05);
+}
 
 .home-up-right {
     display: flex;
     flex-direction: column;
-    align-items: left;
+    align-items: center;
     justify-content: center;
     padding: 10%;
-    /* background: rgb(0, 0, 0,0.2); */
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .home-down {
@@ -175,12 +272,50 @@ button:hover {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 5px;
+    padding: 15px;
     width: 200px;
     height: 200px;
-    /* gap: 20px; */
     background-color: rgb(255, 0, 0, 0.2);
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 0, 0, 0.3);
+}
+
+.inner-div:hover {
+    background-color: rgb(255, 0, 0, 0.3);
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px);
+}
+
+.inner-div a {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin: 8px 0;
+    color: rgb(255, 0, 0, 0.8);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.inner-div a:hover {
+    color: rgb(255, 0, 0, 1);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.inner-div p {
+    font-size: 0.9rem;
+    color: #555;
+    text-align: center;
+    margin: 5px 0 0 0;
+    font-weight: 500;
+    font-style: italic;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.inner-div:hover p {
+    opacity: 1;
+    color: #333;
 }
 
 /* .about-me-box {
@@ -231,14 +366,65 @@ button:hover {
 
 .home-intro1 {
     color: #4293f5;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    font-weight: 500;
+    text-align: justify;
+    margin-bottom: 15px;
+    padding: 15px;
+    background: rgba(66, 147, 245, 0.1);
+    border-left: 4px solid #4293f5;
+    border: 2px solid #999;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(66, 147, 245, 0.1);
+    transition: all 0.3s ease;
+}
+
+.home-intro1:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(66, 147, 245, 0.2);
 }
 
 .home-intro2 {
     color: #f58442;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    font-weight: 500;
+    text-align: justify;
+    margin-bottom: 15px;
+    padding: 15px;
+    background: rgba(245, 132, 66, 0.1);
+    border-left: 4px solid #f58442;
+    border: 2px solid #999;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(245, 132, 66, 0.1);
+    transition: all 0.3s ease;
+}
+
+.home-intro2:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(245, 132, 66, 0.2);
 }
 
 .home-intro3 {
     color: #3fab58;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    font-weight: 500;
+    text-align: justify;
+    margin-bottom: 15px;
+    padding: 15px;
+    background: rgba(63, 171, 88, 0.1);
+    border-left: 4px solid #3fab58;
+    border: 2px solid #999;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(63, 171, 88, 0.1);
+    transition: all 0.3s ease;
+}
+
+.home-intro3:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(63, 171, 88, 0.2);
 }
 
 
@@ -247,10 +433,13 @@ button:hover {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 70%;
-    height: 50%;
-    padding: 10%;
-    /* background: rgb(0, 0, 0,0.2); */
+    width: 85%;
+    padding: 5% 3%;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin: 20px;
 }
 
 /* .footer-container {
@@ -432,8 +621,7 @@ button:hover {
 }
 
 .about-school,
-.about-college 
-{
+.about-college {
     width: 100%;
     height: 100%;
     display: flex;
@@ -447,8 +635,7 @@ button:hover {
 /* .about-university img */
 .about-school img,
 .about-college img,
-.about-university-img
-{
+.about-university-img {
     width: 80%;
     /* height: 100%; */
     margin: 10px;
@@ -458,7 +645,7 @@ button:hover {
 .about-school h1,
 .about-college h1,
 .about-admission h1,
-.about-university h1{
+.about-university h1 {
     text-align: center;
     font-size: xx-large;
     padding: 20px;
@@ -467,7 +654,7 @@ button:hover {
 .about-school p,
 .about-college p,
 .about-admission p,
-.about-university p{
+.about-university p {
     padding: 20px;
     /* text-align: center; */
     /* font-size: xx-large; */
@@ -483,8 +670,7 @@ button:hover {
 }
 
 .about-admission,
-.about-university
-{
+.about-university {
     width: 100%;
     height: 100%;
     display: flex;
@@ -498,15 +684,14 @@ button:hover {
 .about-school,
 .about-college,
 .about-admission,
-.about-university
-{
+.about-university {
     border: 2px solid black;
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 
-.about-admission-table-container{
+.about-admission-table-container {
     padding: 30px 0px;
 }
 
@@ -536,33 +721,34 @@ button:hover {
     background-color: #f1f1f1;
 }
 
-.about-university-img-container{
+.about-university-img-container {
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    
+
     /* width: 100%;
     height: 100%; */
 }
 
-.about-university-img{
+.about-university-img {
     width: 80%;
 }
 
-.about-university-logo{
+.about-university-logo {
     position: absolute;
     top: 50%;
     left: 30%;
     transform: translate(-50%, -50%);
     width: 20%;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(47, 43, 42, 0.5), rgba(169, 167, 164, 0.5)); /* Adjust gradient colors and transparency as needed */
+    background: radial-gradient(circle, rgba(47, 43, 42, 0.5), rgba(169, 167, 164, 0.5));
+    /* Adjust gradient colors and transparency as needed */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 
-.project-container{
+.project-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -574,7 +760,7 @@ button:hover {
     /* background: linear-gradient(to right, rgba(11, 11, 11, 0.5), rgba(2, 1, 0, 0.5)); */
 }
 
-.project iframe{
+.project iframe {
     /* width="560" height="315" */
     height: 315px;
     width: 560px;
@@ -585,8 +771,7 @@ button:hover {
 .project-div-1,
 .project-div-2,
 .project-div-3,
-.project-div-4
-{
+.project-div-4 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 40px;
@@ -600,8 +785,7 @@ button:hover {
 .project-5,
 .project-6,
 .project-7,
-.project-8
-{
+.project-8 {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -614,14 +798,14 @@ button:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
-.project-img img{
+.project-img img {
     width: 80%;
     border: 2px solid black;
     border-radius: 10px;
     /* overflow: hidden; */
 }
 
-.project-img{
+.project-img {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -635,15 +819,14 @@ button:hover {
 .project-6-git-link,
 .project-7-left-git-link,
 .project-7-right-git-link,
-.project-8-git-link
-{
+.project-8-git-link {
     display: flex;
     flex-direction: row;
     gap: 20px;
 }
 
 
-.bold{
+.bold {
     font-weight: bolder;
 }
 
@@ -756,4 +939,879 @@ button:hover {
 
 .submit-button:hover {
     background-color: #0056b3;
+}
+
+/* CV Button and Social Icons Styling */
+.home-cv-button {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.home-cv-button a {
+    text-decoration: none;
+    display: inline-block;
+}
+
+.home-cv-button button {
+    padding: 12px 20px;
+    font-size: 16px;
+    min-width: 150px;
+    white-space: nowrap;
+    cursor: pointer;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 10px;
+    background: rgb(255, 0, 0, 0.7);
+    color: white;
+}
+
+.home-cv-button button:hover {
+    background: rgb(255, 0, 0, 0.9);
+    transform: scale(1.05);
+}
+
+/* ===================================== */
+/* RESPONSIVE DESIGN MEDIA QUERIES */
+/* ===================================== */
+
+/* Mobile-first approach - base styles above are for mobile */
+
+/* Tablet styles (768px and up) */
+@media screen and (max-width: 1024px) {
+    .navbar {
+        padding: 20px 25px;
+        flex-wrap: wrap;
+        min-height: 65px;
+    }
+
+    .logo-text {
+        font-size: large;
+    }
+
+    .navlinks {
+        gap: 20px;
+        font-size: medium;
+    }
+
+    .navlinks a {
+        font-size: 1rem;
+        padding: 8px 12px;
+    }
+
+    .home-up {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        min-height: auto;
+        padding: 20px 0;
+    }
+
+    .home-up-left {
+        padding: 10% 15%;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        order: 1;
+    }
+
+    .home-cv-button {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .home-connect-icons {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .home-up-right {
+        padding: 5%;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        order: 2;
+    }
+
+    .home-profile-image {
+        width: 60%;
+        height: 60%;
+        max-width: 300px;
+    }
+
+    .home-down {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .home-down-left {
+        gap: 20px;
+        grid-template-columns: 1fr 1fr;
+        justify-items: center;
+    }
+
+    .inner-div {
+        width: 150px;
+        height: 150px;
+    }
+
+    .home-link-icons {
+        width: 40px;
+        height: 40px;
+    }
+
+    /* About page responsive */
+    .about-text-info-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .about-round-design-container {
+        width: 400px;
+        height: 400px;
+    }
+
+    .about-round-design-central-image {
+        width: 200px;
+        height: 200px;
+    }
+
+    .about-round-design-info-box {
+        width: 60px;
+        height: 60px;
+        font-size: small;
+    }
+
+    .about-text-box1,
+    .about-text-box2 {
+        width: 300px;
+        height: 250px;
+        font-size: medium;
+    }
+
+    .about-text-box2 {
+        left: 50%;
+        top: 60%;
+    }
+
+    .school-college-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .about-admission-and-university {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    /* Project page responsive */
+    .project-container {
+        padding: 20px;
+    }
+
+    .project-div-1,
+    .project-div-2,
+    .project-div-3,
+    .project-div-4 {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    /* Contact page responsive */
+    .contact-form-outer {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .contact-image {
+        width: 100%;
+        max-width: 400px;
+    }
+}
+
+/* Mobile styles (768px and below) */
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 20px;
+        text-align: center;
+        min-height: auto;
+    }
+
+    .logo-text {
+        font-size: medium;
+    }
+
+    .navlinks {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-top: 10px;
+    }
+
+    .navlinks a {
+        font-size: 0.95rem;
+        padding: 8px 14px;
+        border-radius: 6px;
+    }
+
+    .home-up {
+        padding: 0;
+        margin: 0;
+        grid-template-columns: 1fr;
+        gap: 0;
+        min-height: 100vh;
+    }
+
+    .home-up-left {
+        padding: 3% 10% 1% 10%;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        box-sizing: border-box;
+        order: 1;
+        gap: 15px;
+    }
+
+    .home-up-right {
+        padding: 1% 10% 3% 10%;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        box-sizing: border-box;
+        order: 2;
+    }
+
+    .home-up-left h1 {
+        font-size: 1.5rem;
+        margin: 0;
+    }
+
+    .home-up-left h3 {
+        font-size: 1rem;
+        text-align: center;
+        margin: 0;
+    }
+
+    .home-cv-button {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .home-cv-button button {
+        min-width: 150px;
+        padding: 12px 20px;
+        font-size: 14px;
+        white-space: nowrap;
+    }
+
+    .home-connect-icons {
+        justify-content: center;
+        width: 100%;
+        margin-top: 5px;
+        display: flex;
+        align-items: center;
+    }
+
+    .home-profile-image {
+        width: 80%;
+        height: 80%;
+        max-width: 250px;
+    }
+
+    .home-down {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .home-down-left {
+        gap: 20px;
+        grid-template-columns: 1fr 1fr;
+        justify-items: center;
+    }
+
+    .inner-div {
+        width: 120px;
+        height: 120px;
+    }
+
+    .home-link-icons {
+        width: 30px;
+        height: 30px;
+    }
+
+    /* About page responsive */
+    .about-text-info-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .about-round-design-container {
+        width: 400px;
+        height: 400px;
+    }
+
+    .about-round-design-central-image {
+        width: 200px;
+        height: 200px;
+    }
+
+    .about-round-design-info-box {
+        width: 60px;
+        height: 60px;
+        font-size: small;
+    }
+
+    .about-text-box1,
+    .about-text-box2 {
+        width: 300px;
+        height: 250px;
+        font-size: medium;
+    }
+
+    .about-text-box2 {
+        left: 50%;
+        top: 60%;
+    }
+
+    .school-college-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .about-admission-and-university {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    /* Project page responsive */
+    .project-container {
+        padding: 20px;
+    }
+
+    .project-div-1,
+    .project-div-2,
+    .project-div-3,
+    .project-div-4 {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    /* Contact page responsive */
+    .contact-form-outer {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .contact-image {
+        width: 100%;
+        max-width: 400px;
+    }
+}
+
+/* Small mobile styles (480px and below) */
+@media screen and (max-width: 480px) {
+    .navbar {
+        padding: 12px 15px;
+        gap: 12px;
+    }
+
+    .logo-text {
+        font-size: small;
+    }
+
+    .navlinks {
+        font-size: small;
+        gap: 12px;
+    }
+
+    .navlinks a {
+        font-size: 0.85rem;
+        padding: 6px 10px;
+    }
+
+    .home-up {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        grid-template-columns: 1fr;
+        gap: 0;
+        min-height: 100vh;
+    }
+
+    .home-up-left {
+        padding: 3% 5% 1% 5%;
+        width: 100%;
+        box-sizing: border-box;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 12px;
+    }
+
+    .home-up-right {
+        padding: 1% 5% 3% 5%;
+        width: 100%;
+        box-sizing: border-box;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .home-up-left h1 {
+        font-size: 1.2rem;
+        margin: 0;
+        text-align: center;
+    }
+
+    .home-up-left h3 {
+        font-size: 0.9rem;
+        margin: 0;
+        text-align: center;
+    }
+
+    .home-cv-button {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .home-cv-button button {
+        padding: 10px 16px;
+        font-size: 12px;
+        min-width: 120px;
+        width: auto;
+        white-space: nowrap;
+    }
+
+    .home-connect-icons {
+        justify-content: center;
+        width: 100%;
+        margin-top: 5px;
+        display: flex;
+        align-items: center;
+    }
+
+    .home-profile-image {
+        width: 80%;
+        height: 80%;
+        max-width: 250px;
+    }
+
+    .home-down {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .home-down-left {
+        gap: 20px;
+        grid-template-columns: 1fr 1fr;
+        justify-items: center;
+    }
+
+    .inner-div {
+        width: 120px;
+        height: 120px;
+    }
+
+    .home-link-icons {
+        width: 30px;
+        height: 30px;
+    }
+
+    /* About page responsive */
+    .about-text-info-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .about-round-design-container {
+        width: 400px;
+        height: 400px;
+    }
+
+    .about-round-design-central-image {
+        width: 200px;
+        height: 200px;
+    }
+
+    .about-round-design-info-box {
+        width: 60px;
+        height: 60px;
+        font-size: small;
+    }
+
+    .about-text-box1,
+    .about-text-box2 {
+        width: 300px;
+        height: 250px;
+        font-size: medium;
+    }
+
+    .about-text-box2 {
+        left: 50%;
+        top: 60%;
+    }
+
+    .school-college-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .about-admission-and-university {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    /* Project page responsive */
+    .project-container {
+        padding: 20px;
+    }
+
+    .project-div-1,
+    .project-div-2,
+    .project-div-3,
+    .project-div-4 {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    /* Contact page responsive */
+    .contact-form-outer {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .contact-image {
+        width: 100%;
+        max-width: 400px;
+    }
+}
+
+/* Fix about page layout issues and overlapping */
+@media screen and (max-width: 1024px) {
+    .about-text-info-container {
+        min-height: 100vh;
+        padding: 30px 20px;
+    }
+
+    .about-round-design-container-outer {
+        margin-bottom: 30px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .about-text-info-container {
+        padding: 20px 10px;
+        gap: 30px;
+    }
+
+    .about-round-design-container-outer {
+        order: 1;
+        margin-bottom: 40px;
+    }
+
+    .about-text {
+        order: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 0 10px;
+    }
+
+    /* Ensure no overlap by making text container taller */
+    .about-text-box2 {
+        max-height: none;
+        overflow: visible;
+        line-height: 1.6;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .about-text-info-container {
+        padding: 15px 5px;
+        gap: 20px;
+    }
+
+    .about-round-design-container-outer {
+        margin-bottom: 30px;
+    }
+
+    .about-text {
+        padding: 0 5px;
+    }
+
+    .about-text-box1,
+    .about-text-box2 {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* Additional responsive improvements */
+
+/* Ensure proper spacing and alignment */
+.navbar {
+    position: relative;
+    z-index: 1000;
+}
+
+/* Improve button responsiveness */
+.home-cv-button {
+    width: 100%;
+    text-align: center;
+}
+
+.home-cv-button button {
+    min-width: 150px;
+    font-size: inherit;
+}
+
+/* Better image responsiveness */
+.home-profile-image {
+    object-fit: cover;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.home-profile-image:hover {
+    transform: scale(1.05);
+}
+
+/* Improve grid layouts for better mobile experience */
+@media screen and (max-width: 768px) {
+    .home-down-left {
+        padding: 20px 10px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .inner-div {
+        margin: 0 auto;
+        text-align: center;
+        padding: 12px;
+    }
+
+    .inner-div a {
+        font-weight: bold;
+        margin: 5px 0;
+        display: block;
+        font-size: 1rem;
+    }
+
+    .inner-div p {
+        margin: 5px 0;
+        font-size: 0.85rem;
+    }
+}
+
+/* Improve form responsiveness */
+@media screen and (max-width: 768px) {
+    .contact-form {
+        padding: 15px;
+        width: 100%;
+    }
+
+    .contact-info-fields {
+        margin-bottom: 15px;
+        padding: 10px;
+    }
+
+    .contact-info-fields label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    .contact-info-fields input,
+    .contact-info-fields textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 16px;
+        /* Prevents zoom on iOS */
+    }
+
+    .contact-info-fields textarea {
+        min-height: 100px;
+        resize: vertical;
+    }
+}
+
+/* Improve table responsiveness */
+@media screen and (max-width: 768px) {
+    .about-admission-table-container {
+        overflow-x: auto;
+        margin: 20px 0;
+    }
+
+    .about-admission-table {
+        min-width: 300px;
+        font-size: 0.8rem;
+    }
+
+    .about-admission-table th,
+    .about-admission-table td {
+        padding: 8px 4px;
+        white-space: nowrap;
+    }
+}
+
+/* Better spacing for small screens */
+@media screen and (max-width: 480px) {
+
+    .home-page,
+    .about-text-info-container,
+    .school-college-container,
+    .about-admission-and-university,
+    .project-container {
+        margin: 0;
+        padding: 10px;
+    }
+
+    .footer {
+        padding: 15px 10px;
+    }
+
+    .footer p {
+        font-size: 0.8rem;
+        line-height: 1.4;
+    }
+}
+
+/* Ensure touch targets are large enough */
+@media screen and (max-width: 768px) {
+
+    .navlinks a,
+    .rounded-icon-link,
+    button,
+    .submit-button {
+        min-height: 44px;
+        min-width: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+    }
+
+    .navlinks a {
+        min-height: 40px;
+        padding: 10px 14px;
+        border-radius: 6px;
+    }
+
+    .rounded-icon {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+/* Improve text readability on mobile */
+@media screen and (max-width: 768px) {
+
+    .home-intro1,
+    .home-intro2,
+    .home-intro3 {
+        line-height: 1.5;
+        margin-bottom: 15px;
+        font-size: 1rem;
+        padding: 12px;
+        text-align: left;
+    }
+
+    .about-text-box2 {
+        line-height: 1.4;
+        overflow-y: auto;
+    }
+
+    .home-down-right {
+        width: 95%;
+        padding: 3% 5%;
+        margin: 5px;
+    }
+}
+
+/* Add focus styles for accessibility */
+button:focus,
+.submit-button:focus,
+.navlinks a:focus,
+.rounded-icon-link:focus {
+    outline: 2px solid #007BFF;
+    outline-offset: 2px;
+}
+
+.navlinks a:focus {
+    outline: 2px solid rgb(255, 0, 0, 0.6);
+    outline-offset: 3px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Smooth scrolling for better UX */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Smooth scrolling for better UX */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Prevent horizontal scrolling on mobile */
+body {
+    overflow-x: hidden;
+}
+
+/* Add some animation for better UX */
+.inner-div,
+.about-round-design-info-box,
+.contact-links-inner {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.inner-div:hover,
+.about-round-design-info-box:hover,
+.contact-links-inner:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+@media screen and (max-width: 768px) {
+
+    .inner-div:hover,
+    .about-round-design_info-box:hover,
+    .contact-links-inner:hover {
+        transform: none;
+        /* Disable hover effects on mobile */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .home-connect-icons {
+        margin-top: 0 !important;
+        gap: 2px !important;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .home-connect-icons {
+        margin-top: 0 !important;
+        gap: 1px !important;
+    }
 }

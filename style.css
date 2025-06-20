@@ -366,7 +366,7 @@ button:hover {
 
 .home-intro1 {
     color: #4293f5;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     line-height: 1.6;
     font-weight: 500;
     text-align: justify;
@@ -376,18 +376,18 @@ button:hover {
     border-left: 4px solid #4293f5;
     border: 2px solid #999;
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(66, 147, 245, 0.1);
+    box-shadow: -12px 0px 0px rgba(66, 147, 245, 0.6), 0 2px 10px rgba(66, 147, 245, 0.1);
     transition: all 0.3s ease;
 }
 
 .home-intro1:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(66, 147, 245, 0.2);
+    box-shadow: -15px 0px 0px rgba(66, 147, 245, 0.8), 0 4px 15px rgba(66, 147, 245, 0.2);
 }
 
 .home-intro2 {
     color: #f58442;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     line-height: 1.6;
     font-weight: 500;
     text-align: justify;
@@ -397,18 +397,18 @@ button:hover {
     border-left: 4px solid #f58442;
     border: 2px solid #999;
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(245, 132, 66, 0.1);
+    box-shadow: -12px 0px 0px rgba(245, 132, 66, 0.6), 0 2px 10px rgba(245, 132, 66, 0.1);
     transition: all 0.3s ease;
 }
 
 .home-intro2:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(245, 132, 66, 0.2);
+    box-shadow: -15px 0px 0px rgba(245, 132, 66, 0.8), 0 4px 15px rgba(245, 132, 66, 0.2);
 }
 
 .home-intro3 {
     color: #3fab58;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     line-height: 1.6;
     font-weight: 500;
     text-align: justify;
@@ -418,13 +418,13 @@ button:hover {
     border-left: 4px solid #3fab58;
     border: 2px solid #999;
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(63, 171, 88, 0.1);
+    box-shadow: -12px 0px 0px rgba(63, 171, 88, 0.6), 0 2px 10px rgba(63, 171, 88, 0.1);
     transition: all 0.3s ease;
 }
 
 .home-intro3:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(63, 171, 88, 0.2);
+    box-shadow: -15px 0px 0px rgba(63, 171, 88, 0.8), 0 4px 15px rgba(63, 171, 88, 0.2);
 }
 
 
@@ -1838,7 +1838,7 @@ button:hover {
     .home-intro3 {
         line-height: 1.5;
         margin-bottom: 15px;
-        font-size: 1rem;
+        font-size: 1.2rem;
         padding: 12px;
         text-align: left;
     }
